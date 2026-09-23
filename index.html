@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abdul Manan | Master Life Strategist, Academic Mentor & Holistic Advisor</title>
+    <title>Abdul Manan | Master Life Strategist & Academic Mentor</title>
     
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -11,28 +11,29 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Lucide Icons CDN -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
-    <!-- Tailwind Configuration -->
+    <!-- Tailwind Configuration (Gold & Pitch Black Theme) -->
     <script>
         tailwind.config = {
             darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
-                        darkBg: '#0A0D14',
-                        cardBg: '#121722',
-                        borderCol: '#1E2638',
-                        goldPrimary: '#D4AF37',
-                        goldLight: '#F3E5AB',
-                        goldDark: '#997A15'
+                        brandBlack: '#050505',
+                        cardDark: '#0e0e10',
+                        cardBorder: '#1c1c22',
+                        goldAccent: '#d4af37',
+                        goldHover: '#f3e5ab',
+                        goldMuted: '#997a15',
+                        emeraldAccent: '#10b981'
                     },
                     fontFamily: {
                         sans: ['Plus Jakarta Sans', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif']
+                        serif: ['Cinzel', 'serif']
                     }
                 }
             }
@@ -42,352 +43,362 @@
     <style>
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #0A0D14;
-            color: #F3F4F6;
+            background-color: #050505;
+            color: #e5e7eb;
+        }
+        .font-cinzel {
+            font-family: 'Cinzel', serif;
         }
         .gold-gradient-text {
-            background: linear-gradient(135deg, #F3E5AB 0%, #D4AF37 50%, #AA820A 100%);
+            background: linear-gradient(135deg, #fff2a3 0%, #d4af37 50%, #aa7c11 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        .gold-glow {
+        .gold-border-glow {
             box-shadow: 0 0 25px rgba(212, 175, 55, 0.15);
         }
-        .glass-panel {
-            background: rgba(18, 23, 34, 0.75);
-            backdrop-filter: blur(16px);
-            border: 1px solid rgba(30, 38, 56, 0.8);
+        .tab-btn {
+            transition: all 0.3s ease;
+        }
+        .tab-btn.active {
+            border-color: #d4af37;
+            background-color: rgba(212, 175, 55, 0.12);
+            color: #d4af37;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+        }
+        .service-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(212, 175, 55, 0.5);
+            box-shadow: 0 10px 30px -10px rgba(212, 175, 55, 0.15);
         }
     </style>
 </head>
-<body class="min-h-screen flex flex-col selection:bg-goldPrimary selection:text-black">
+<body class="min-h-screen flex flex-col selection:bg-goldAccent selection:text-black">
 
     <!-- Header / Navigation -->
-    <header class="fixed top-0 left-0 right-0 z-50 glass-panel border-b border-borderCol">
+    <header class="fixed top-0 left-0 right-0 z-50 bg-brandBlack/90 backdrop-blur-md border-b border-cardBorder">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <div class="flex items-center space-x-3">
-                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-goldPrimary to-goldDark flex items-center justify-center font-bold text-black text-xl shadow-lg shadow-goldPrimary/20">AM</div>
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-goldAccent to-goldMuted flex items-center justify-center font-bold text-black font-cinzel text-lg shadow-lg shadow-goldAccent/20">AM</div>
                 <div>
-                    <span class="font-serif text-lg font-bold tracking-wide text-white">Abdul Manan</span>
-                    <span class="block text-xs text-goldPrimary tracking-widest uppercase">Master Strategist & Mentor</span>
+                    <span class="font-bold text-lg tracking-wider text-white block leading-tight font-cinzel">ABDUL MANAN</span>
+                    <span class="text-[10px] tracking-widest uppercase text-goldAccent font-semibold">Master Life Strategist</span>
                 </div>
             </div>
             
-            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-300">
-                <a href="#expertise" class="hover:text-goldPrimary transition">Expertise</a>
-                <a href="#services" class="hover:text-goldPrimary transition">Services & Pricing</a>
-                <a href="#booking" class="hover:text-goldPrimary transition">Book Session</a>
-                <a href="#contact" class="hover:text-goldPrimary transition">Direct Connect</a>
+            <nav class="hidden md:flex items-center space-x-8 text-xs font-semibold uppercase tracking-widest text-gray-400">
+                <a href="#about" class="hover:text-goldAccent transition">About</a>
+                <a href="#offerings" class="hover:text-goldAccent transition">Offerings & Modules</a>
+                <a href="#pricing" class="hover:text-goldAccent transition">Pricing Tiers</a>
+                <a href="#booking" class="hover:text-goldAccent transition">Book Session</a>
             </nav>
 
             <div class="flex items-center space-x-4">
-                <a href="https://wa.me/923115840938?text=Hello%20Abdul%20Manan,%20I%20would%20like%20to%20book%20a%20consultation." target="_blank" class="hidden sm:inline-flex items-center space-x-2 bg-gradient-to-r from-goldPrimary to-goldDark text-black font-bold px-5 py-2.5 rounded-xl shadow-lg hover:brightness-110 transition">
+                <a href="https://wa.me/923115840938?text=Hello%20Abdul%20Manan,%20I%20would%20like%20to%20inquire%20about%20your%20mentorship%20services." target="_blank" class="inline-flex items-center space-x-2 bg-emeraldAccent hover:bg-emerald-600 text-black font-bold text-xs uppercase tracking-wider px-4 py-2.5 rounded-xl shadow-lg transition">
                     <i data-lucide="message-circle" class="w-4 h-4"></i>
                     <span>WhatsApp Direct</span>
                 </a>
-                <button onclick="openAdminModal()" class="text-xs text-gray-400 hover:text-goldPrimary border border-borderCol px-3 py-2 rounded-lg transition flex items-center space-x-1">
-                    <i data-lucide="shield" class="w-3.5 h-3.5"></i>
-                    <span>Creator Login</span>
-                </button>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="pt-36 pb-20 px-6 relative overflow-hidden">
-        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-goldPrimary/5 rounded-full blur-3xl pointer-events-none"></div>
-        <div class="max-w-5xl mx-auto text-center relative z-10">
-            <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full glass-panel border border-goldPrimary/30 text-goldLight text-xs font-semibold uppercase tracking-wider mb-6">
-                <i data-lucide="sparkles" class="w-3.5 h-3.5 text-goldPrimary"></i>
-                <span>Exclusive Elite Advisory & Academic Mentorship</span>
-            </div>
-            <h1 class="text-4xl md:text-6xl lg:text-7xl font-serif font-bold tracking-tight text-white mb-6 leading-tight">
-                Master Your Mind, Physique & <span class="gold-gradient-text">Destiny</span>.
-            </h1>
-            <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-10 font-light">
-                Welcome to the digital sanctuary of Abdul Manan. Uncompromising guidance across advanced sciences, self-mastery, strategic career positioning, relationships, styling, and elite personal growth.
-            </p>
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="#booking" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-goldPrimary to-goldDark text-black font-bold text-base shadow-xl hover:scale-105 transition">
-                    Book Consultation Session
-                </a>
-                <a href="https://instagram.com/rocky_manaan1" target="_blank" class="w-full sm:w-auto px-8 py-4 rounded-xl glass-panel text-white font-semibold text-base hover:border-goldPrimary/50 transition flex items-center justify-center space-x-2">
-                    <i data-lucide="instagram" class="w-5 h-5 text-goldPrimary"></i>
-                    <span>Connect @rocky_manaan1</span>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Expertise Section -->
-    <section id="expertise" class="py-20 px-6 border-t border-borderCol bg-cardBg/50">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <h2 class="text-3xl font-serif font-bold text-white mb-4">Multidisciplinary Mastery</h2>
-                <p class="text-gray-400">Deep, rigorous, and actionable expertise curated from specialized academic background and practical execution.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="glass-panel p-8 rounded-2xl hover:border-goldPrimary/40 transition group">
-                    <div class="w-12 h-12 rounded-xl bg-goldPrimary/10 text-goldPrimary flex items-center justify-center mb-6 group-hover:scale-110 transition">
-                        <i data-lucide="brain" class="w-6 h-6"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Self-Growth & Psychology</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Advanced behavioral dynamics, cognitive reframing, study tactics, critical thinking frameworks, and personal motivation.</p>
-                </div>
-
-                <div class="glass-panel p-8 rounded-2xl hover:border-goldPrimary/40 transition group">
-                    <div class="w-12 h-12 rounded-xl bg-goldPrimary/10 text-goldPrimary flex items-center justify-center mb-6 group-hover:scale-110 transition">
-                        <i data-lucide="dumbbell" class="w-6 h-6"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Dieting & Gym Physique Science</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Hypertrophy protocols, precision macronutrient scheduling, fat loss biochemistry, and tailored gym workout design.</p>
-                </div>
-
-                <div class="glass-panel p-8 rounded-2xl hover:border-goldPrimary/40 transition group">
-                    <div class="w-12 h-12 rounded-xl bg-goldPrimary/10 text-goldPrimary flex items-center justify-center mb-6 group-hover:scale-110 transition">
-                        <i data-lucide="graduation-cap" class="w-6 h-6"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Sciences Mentorship & Career Counseling</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Academic tutoring for biology and zoology sciences group students, international Master's university positioning, and career pathing.</p>
-                </div>
-
-                <div class="glass-panel p-8 rounded-2xl hover:border-goldPrimary/40 transition group">
-                    <div class="w-12 h-12 rounded-xl bg-goldPrimary/10 text-goldPrimary flex items-center justify-center mb-6 group-hover:scale-110 transition">
-                        <i data-lucide="heart-handshake" class="w-6 h-6"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Relationship Advice & Solutions</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Emotional intelligence, interpersonal relationship conflict resolution, clarity coaching, and empathy-driven solutions.</p>
-                </div>
-
-                <div class="glass-panel p-8 rounded-2xl hover:border-goldPrimary/40 transition group">
-                    <div class="w-12 h-12 rounded-xl bg-goldPrimary/10 text-goldPrimary flex items-center justify-center mb-6 group-hover:scale-110 transition">
-                        <i data-lucide="sparkle" class="w-6 h-6"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Styling Sense & Perfume Science</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Facial structure grooming analysis, high-impact wardrobe curation, and signature olfactory profiling for niche and designer fragrances.</p>
-                </div>
-
-                <div class="glass-panel p-8 rounded-2xl hover:border-goldPrimary/40 transition group">
-                    <div class="w-12 h-12 rounded-xl bg-goldPrimary/10 text-goldPrimary flex items-center justify-center mb-6 group-hover:scale-110 transition">
-                        <i data-lucide="book-open" class="w-6 h-6"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Islamic Teachings & History</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Profound civilizational history, moral philosophy grounded in Islamic teachings, and principled decision-making framework.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services & Pricing Section -->
-    <section id="services" class="py-20 px-6 border-t border-borderCol">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <h2 class="text-3xl font-serif font-bold text-white mb-4">Advisory Sessions & Pricing</h2>
-                <p class="text-gray-400">Select your transformative tier. Submit the form below or message directly on WhatsApp to begin.</p>
-            </div>
+    <!-- Hero Section with Custom Image -->
+    <section id="about" class="pt-32 pb-20 px-6 relative overflow-hidden border-b border-cardBorder bg-gradient-to-b from-brandBlack via-cardDark/50 to-brandBlack">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Tier 1 -->
-                <div class="glass-panel rounded-3xl p-8 flex flex-col justify-between border border-borderCol hover:border-goldPrimary transition">
-                    <div>
-                        <div class="text-xs uppercase font-bold text-goldPrimary tracking-widest mb-2">Strategy Starter</div>
-                        <h3 class="text-2xl font-bold text-white mb-4">1-on-1 Deep Consultation</h3>
-                        <div class="text-4xl font-extrabold text-white mb-6">$50 <span class="text-sm font-normal text-gray-400">/ 60 mins</span></div>
-                        <p class="text-gray-400 text-sm mb-6">Immediate tactical analysis and action plan for your most pressing personal, academic, or fitness bottleneck.</p>
-                        <ul class="space-y-3 text-sm text-gray-300 mb-8">
-                            <li class="flex items-center space-x-3"><i data-lucide="check" class="w-4 h-4 text-goldPrimary"></i><span>60-Minute Video Session</span></li>
-                            <li class="flex items-center space-x-3"><i data-lucide="check" class="w-4 h-4 text-goldPrimary"></i><span>Custom Action Roadmap PDF</span></li>
-                            <li class="flex items-center space-x-3"><i data-lucide="check" class="w-4 h-4 text-goldPrimary"></i><span>Direct WhatsApp Follow-up</span></li>
+            <!-- Profile Photo Container -->
+            <div class="w-full md:w-1/3 flex flex-col items-center">
+                <div class="relative w-64 h-80 md:w-72 md:h-96 rounded-2xl overflow-hidden border-2 border-goldAccent/60 gold-border-glow bg-cardDark flex items-center justify-center group">
+                    
+                    <!-- YOUR DIRECT PHOTO LINKED HERE -->
+                    <img id="user-photo" src="./profile.jpg" alt="Abdul Manan" class="w-full h-full object-cover object-top filter contrast-105">
+                    
+                    <div class="absolute inset-0 bg-gradient-to-t from-brandBlack via-transparent to-transparent opacity-60"></div>
+                    <div class="absolute bottom-4 left-4 right-4 text-center">
+                        <span class="text-xs font-bold uppercase tracking-widest text-goldAccent">Abdul Manan</span>
+                    </div>
+                </div>
+                <div class="mt-4 text-center">
+                    <span class="inline-block bg-goldAccent/10 text-goldAccent text-xs font-semibold px-4 py-1.5 rounded-full border border-goldAccent/30 uppercase tracking-wider">BS Zoology | European Master's Scholar</span>
+                </div>
+            </div>
+
+            <!-- Hero Intro Text -->
+            <div class="w-full md:w-2/3 text-center md:text-left">
+                <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-cardDark border border-goldAccent/30 text-goldAccent text-xs font-semibold uppercase tracking-widest mb-6">
+                    <i data-lucide="shield-check" class="w-4 h-4 text-goldAccent"></i>
+                    <span>The Real World Blueprint</span>
+                </div>
+                <h1 class="text-3xl md:text-5xl font-extrabold text-white tracking-tight mb-6 leading-tight font-cinzel">
+                    Master Your <span class="gold-gradient-text">Mind, Academics & Physique.</span>
+                </h1>
+                <p class="text-gray-300 text-base md:text-lg mb-8 leading-relaxed font-normal">
+                    I provide elite-level mentorship tailored for individuals seeking radical transformation. Whether navigating international university admissions, mastering biological sciences, or achieving elite physical conditioning—we execute with absolute precision.
+                </p>
+                <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+                    <a href="#offerings" class="px-7 py-3.5 bg-gradient-to-r from-goldAccent to-goldMuted hover:from-goldHover hover:to-goldAccent text-black font-bold uppercase tracking-wider text-xs rounded-xl transition shadow-lg shadow-goldAccent/20 flex items-center space-x-2">
+                        <span>Explore All Modules</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                    <a href="#booking" class="px-7 py-3.5 bg-cardDark hover:bg-cardBorder border border-goldAccent/40 text-goldAccent font-bold uppercase tracking-wider text-xs rounded-xl transition flex items-center space-x-2">
+                        <i data-lucide="calendar" class="w-4 h-4 text-goldAccent"></i>
+                        <span>Book Session (PKR 5,000+)</span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Interactive Offerings Section (Clickable Tabs with Custom Content) -->
+    <section id="offerings" class="py-20 px-6 border-b border-cardBorder bg-brandBlack">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <h2 class="text-3xl font-bold text-white mb-3 font-cinzel">Elite Mentorship Modules</h2>
+                <p class="text-gray-400 text-sm">Select a category below to explore specific curriculums, strategies, and section blueprints.</p>
+            </div>
+
+            <!-- Tab Navigation Buttons -->
+            <div class="flex flex-wrap justify-center gap-3 mb-12">
+                <button onclick="switchTab('academics')" id="tab-academics" class="tab-btn active px-6 py-3.5 rounded-xl border border-cardBorder bg-cardDark text-xs font-bold uppercase tracking-wider flex items-center space-x-2">
+                    <i data-lucide="book-open" class="w-4 h-4"></i>
+                    <span>Biological Sciences & Academics</span>
+                </button>
+                <button onclick="switchTab('admissions')" id="tab-admissions" class="tab-btn px-6 py-3.5 rounded-xl border border-cardBorder bg-cardDark text-xs font-bold uppercase tracking-wider flex items-center space-x-2">
+                    <i data-lucide="graduation-cap" class="w-4 h-4"></i>
+                    <span>International Admissions & CV Strategy</span>
+                </button>
+                <button onclick="switchTab('fitness')" id="tab-fitness" class="tab-btn px-6 py-3.5 rounded-xl border border-cardBorder bg-cardDark text-xs font-bold uppercase tracking-wider flex items-center space-x-2">
+                    <i data-lucide="activity" class="w-4 h-4"></i>
+                    <span>Physique & Recomposition</span>
+                </button>
+                <button onclick="switchTab('mindset')" id="tab-mindset" class="tab-btn px-6 py-3.5 rounded-xl border border-cardBorder bg-cardDark text-xs font-bold uppercase tracking-wider flex items-center space-x-2">
+                    <i data-lucide="brain" class="w-4 h-4"></i>
+                    <span>Mindset & Discipline</span>
+                </button>
+            </div>
+
+            <!-- TAB CONTENT 1: Biological Sciences -->
+            <div id="content-academics" class="tab-content">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center bg-cardDark p-8 rounded-2xl border border-cardBorder">
+                    <div class="space-y-4">
+                        <span class="text-xs font-extrabold text-goldAccent uppercase tracking-widest">Module 01 — Academic Excellence</span>
+                        <h3 class="text-2xl font-bold text-white font-cinzel">Biological Sciences & Research Mastery</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            Structured academic tutoring derived from a rigorous background in Zoology and ecology. Focused on conceptual clarity, examination mastery, and research paper formulation.
+                        </p>
+                        <ul class="space-y-2.5 text-sm text-gray-300">
+                            <li class="flex items-center space-x-3"><i data-lucide="check-circle-2" class="w-4 h-4 text-goldAccent"></i><span>Cellular Biology, Systematics & Animal Physiology</span></li>
+                            <li class="flex items-center space-x-3"><i data-lucide="check-circle-2" class="w-4 h-4 text-goldAccent"></i><span>Ecological Sampling, Field Methods & Statistical Analysis</span></li>
+                            <li class="flex items-center space-x-3"><i data-lucide="check-circle-2" class="w-4 h-4 text-goldAccent"></i><span>Undergraduate Thesis & Scientific Literature Review</span></li>
                         </ul>
                     </div>
-                    <a href="#booking" class="w-full py-3.5 rounded-xl bg-goldPrimary/10 hover:bg-goldPrimary hover:text-black text-goldPrimary font-bold text-center transition">
-                        Select This Plan
-                    </a>
+                    <div class="rounded-xl overflow-hidden border border-goldAccent/30 shadow-xl">
+                        <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&q=80&w=800" alt="Biological Science Mentorship" class="w-full h-72 object-cover">
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB CONTENT 2: International Admissions -->
+            <div id="content-admissions" class="tab-content hidden">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center bg-cardDark p-8 rounded-2xl border border-cardBorder">
+                    <div class="space-y-4">
+                        <span class="text-xs font-extrabold text-goldAccent uppercase tracking-widest">Module 02 — Career Launch</span>
+                        <h3 class="text-2xl font-bold text-white font-cinzel">European Admission & CV Blueprint</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            Step-by-step guidance for Pakistani scholars aiming for admission into top-tier European Master's programs, complete with ATS-optimized resume formatting and statement auditing.
+                        </p>
+                        <ul class="space-y-2.5 text-sm text-gray-300">
+                            <li class="flex items-center space-x-3"><i data-lucide="check-circle-2" class="w-4 h-4 text-goldAccent"></i><span>Line-by-Line Academic CV Optimization (ATS Compliance)</span></li>
+                            <li class="flex items-center space-x-3"><i data-lucide="check-circle-2" class="w-4 h-4 text-goldAccent"></i><span>Statement of Purpose (SOP) & Motivation Letter Structuring</span></li>
+                            <li class="flex items-center space-x-3"><i data-lucide="check-circle-2" class="w-4 h-4 text-goldAccent"></i><span>Italian & European University Application Workflows</span></li>
+                        </ul>
+                    </div>
+                    <div class="rounded-xl overflow-hidden border border-goldAccent/30 shadow-xl">
+                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=800" alt="Global University Admissions" class="w-full h-72 object-cover">
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB CONTENT 3: Fitness & Recomposition -->
+            <div id="content-fitness" class="tab-content hidden">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center bg-cardDark p-8 rounded-2xl border border-cardBorder">
+                    <div class="space-y-4">
+                        <span class="text-xs font-extrabold text-goldAccent uppercase tracking-widest">Module 03 — Peak Physical State</span>
+                        <h3 class="text-2xl font-bold text-white font-cinzel">High-Performance Body Recomposition</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            Scientific training regimes combined with calculated calorie control to lower body fat, build functional lean mass, and maximize daily baseline energy.
+                        </p>
+                        <ul class="space-y-2.5 text-sm text-gray-300">
+                            <li class="flex items-center space-x-3"><i data-lucide="check-circle-2" class="w-4 h-4 text-goldAccent"></i><span>Push-Pull-Legs & Hypertrophy Routine Setup</span></li>
+                            <li class="flex items-center space-x-3"><i data-lucide="check-circle-2" class="w-4 h-4 text-goldAccent"></i><span>Caloric Deficit & High-Protein Meal Structure</span></li>
+                            <li class="flex items-center space-x-3"><i data-lucide="check-circle-2" class="w-4 h-4 text-goldAccent"></i><span>Targeted Fasted Cardio for Continuous Fat Loss</span></li>
+                        </ul>
+                    </div>
+                    <div class="rounded-xl overflow-hidden border border-goldAccent/30 shadow-xl">
+                        <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&q=80&w=800" alt="Physical Conditioning" class="w-full h-72 object-cover">
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB CONTENT 4: Mindset & Discipline -->
+            <div id="content-mindset" class="tab-content hidden">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center bg-cardDark p-8 rounded-2xl border border-cardBorder">
+                    <div class="space-y-4">
+                        <span class="text-xs font-extrabold text-goldAccent uppercase tracking-widest">Module 04 — Unshakeable Focus</span>
+                        <h3 class="text-2xl font-bold text-white font-cinzel">Mindset, Routine & Personal Presence</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            Cultivate absolute focus, build disciplined routines, and optimize personal grooming and confidence to stand out in high-stakes environments.
+                        </p>
+                        <ul class="space-y-2.5 text-sm text-gray-300">
+                            <li class="flex items-center space-x-3"><i data-lucide="check-circle-2" class="w-4 h-4 text-goldAccent"></i><span>Daily Time-Blocking & Focus Management</span></li>
+                            <li class="flex items-center space-x-3"><i data-lucide="check-circle-2" class="w-4 h-4 text-goldAccent"></i><span>Personal Grooming & Facial Styling Architecture</span></li>
+                            <li class="flex items-center space-x-3"><i data-lucide="check-circle-2" class="w-4 h-4 text-goldAccent"></i><span>Elimination of Distractions & Unstoppable Drive</span></li>
+                        </ul>
+                    </div>
+                    <div class="rounded-xl overflow-hidden border border-goldAccent/30 shadow-xl">
+                        <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=800" alt="Mindset & Strategy" class="w-full h-72 object-cover">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Pricing Section (Gold & Dark Luxury) -->
+    <section id="pricing" class="py-20 px-6 border-b border-cardBorder bg-gradient-to-b from-brandBlack via-cardDark/30 to-brandBlack">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold text-white mb-3 font-cinzel">Investment Tiers (PKR)</h2>
+                <p class="text-gray-400 text-sm">Transparent, accessible local pricing structured for high-value execution.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Tier 1 -->
+                <div class="service-card bg-cardDark border border-cardBorder p-8 rounded-2xl flex flex-col justify-between">
+                    <div>
+                        <div class="text-[10px] uppercase font-extrabold text-goldAccent tracking-widest mb-2">Single Strategy</div>
+                        <h3 class="text-xl font-bold text-white mb-3 font-cinzel">1-on-1 Strategy Call</h3>
+                        <div class="text-3xl font-extrabold text-white mb-4">Rs 5,000 <span class="text-xs text-gray-400 font-normal">/ session</span></div>
+                        <p class="text-gray-300 text-sm mb-6">A high-impact 60-minute session focusing on immediate CV feedback, biology tutoring, or workout auditing.</p>
+                        <ul class="space-y-3 text-xs text-gray-300 mb-8">
+                            <li class="flex items-center space-x-2"><i data-lucide="check" class="w-4 h-4 text-goldAccent"></i><span>60 Minutes Live Session</span></li>
+                            <li class="flex items-center space-x-2"><i data-lucide="check" class="w-4 h-4 text-goldAccent"></i><span>Immediate Application or CV Audit</span></li>
+                            <li class="flex items-center space-x-2"><i data-lucide="check" class="w-4 h-4 text-goldAccent"></i><span>Actionable Follow-up Summary</span></li>
+                        </ul>
+                    </div>
+                    <a href="#booking" class="w-full py-3.5 bg-cardBorder hover:bg-goldAccent hover:text-black font-bold uppercase tracking-wider text-xs text-white text-center rounded-xl transition block">Book for Rs 5,000</a>
                 </div>
 
                 <!-- Tier 2 (Featured) -->
-                <div class="glass-panel rounded-3xl p-8 flex flex-col justify-between border-2 border-goldPrimary gold-glow relative">
-                    <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-goldPrimary to-goldDark text-black text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wider">Most Popular</div>
+                <div class="service-card bg-cardDark border-2 border-goldAccent p-8 rounded-2xl flex flex-col justify-between relative shadow-xl shadow-goldAccent/10">
+                    <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-goldAccent text-black text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-widest">Most Requested</div>
                     <div>
-                        <div class="text-xs uppercase font-bold text-goldPrimary tracking-widest mb-2">Total Transformation</div>
-                        <h3 class="text-2xl font-bold text-white mb-4">30-Day Elite Mentorship</h3>
-                        <div class="text-4xl font-extrabold text-white mb-6">$250 <span class="text-sm font-normal text-gray-400">/ month</span></div>
-                        <p class="text-gray-400 text-sm mb-6">Comprehensive oversight across fitness programming, study schedule, dietary optimization, styling, and mindset.</p>
-                        <ul class="space-y-3 text-sm text-gray-300 mb-8">
-                            <li class="flex items-center space-x-3"><i data-lucide="check" class="w-4 h-4 text-goldPrimary"></i><span>Weekly 1-on-1 Video Calls (4 sessions)</span></li>
-                            <li class="flex items-center space-x-3"><i data-lucide="check" class="w-4 h-4 text-goldPrimary"></i><span>Custom Gym & Diet Blueprint</span></li>
-                            <li class="flex items-center space-x-3"><i data-lucide="check" class="w-4 h-4 text-goldPrimary"></i><span>Priority Daily WhatsApp Access</span></li>
+                        <div class="text-[10px] uppercase font-extrabold text-goldAccent tracking-widest mb-2">Complete Package</div>
+                        <h3 class="text-xl font-bold text-white mb-3 font-cinzel">Admissions & CV Blueprint</h3>
+                        <div class="text-3xl font-extrabold text-white mb-4">Rs 12,000 <span class="text-xs text-gray-400 font-normal">/ complete plan</span></div>
+                        <p class="text-gray-300 text-sm mb-6">Complete preparation and optimization of your academic application package for foreign universities.</p>
+                        <ul class="space-y-3 text-xs text-gray-300 mb-8">
+                            <li class="flex items-center space-x-2"><i data-lucide="check" class="w-4 h-4 text-goldAccent"></i><span>Full ATS Academic CV Optimization</span></li>
+                            <li class="flex items-center space-x-2"><i data-lucide="check" class="w-4 h-4 text-goldAccent"></i><span>Motivation Letter Review & Drafting</span></li>
+                            <li class="flex items-center space-x-2"><i data-lucide="check" class="w-4 h-4 text-goldAccent"></i><span>2 Live Consultations & Strategy Calls</span></li>
                         </ul>
                     </div>
-                    <a href="#booking" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-goldPrimary to-goldDark text-black font-bold text-center transition hover:brightness-110">
-                        Select This Plan
-                    </a>
+                    <a href="#booking" class="w-full py-3.5 bg-gradient-to-r from-goldAccent to-goldMuted hover:from-goldHover hover:to-goldAccent text-black font-bold uppercase tracking-wider text-xs text-center rounded-xl transition block">Book for Rs 12,000</a>
                 </div>
 
                 <!-- Tier 3 -->
-                <div class="glass-panel rounded-3xl p-8 flex flex-col justify-between border border-borderCol hover:border-goldPrimary transition">
+                <div class="service-card bg-cardDark border border-cardBorder p-8 rounded-2xl flex flex-col justify-between">
                     <div>
-                        <div class="text-xs uppercase font-bold text-goldPrimary tracking-widest mb-2">Academic Mastery</div>
-                        <h3 class="text-2xl font-bold text-white mb-4">Sciences Group Tutoring</h3>
-                        <div class="text-4xl font-extrabold text-white mb-6">$120 <span class="text-sm font-normal text-gray-400">/ month</span></div>
-                        <p class="text-gray-400 text-sm mb-6">Rigorous academic coaching for zoology, biology, and sciences students aiming for top-tier university admissions.</p>
-                        <ul class="space-y-3 text-sm text-gray-300 mb-8">
-                            <li class="flex items-center space-x-3"><i data-lucide="check" class="w-4 h-4 text-goldPrimary"></i><span>Bi-Weekly Intensive Tutorials</span></li>
-                            <li class="flex items-center space-x-3"><i data-lucide="check" class="w-4 h-4 text-goldPrimary"></i><span>CV & Admissions Strategy</span></li>
-                            <li class="flex items-center space-x-3"><i data-lucide="check" class="w-4 h-4 text-goldPrimary"></i><span>Exam & Study Tactics Review</span></li>
+                        <div class="text-[10px] uppercase font-extrabold text-goldAccent tracking-widest mb-2">30-Day Mentorship</div>
+                        <h3 class="text-xl font-bold text-white mb-3 font-cinzel">Total Life Transformation</h3>
+                        <div class="text-3xl font-extrabold text-white mb-4">Rs 20,000 <span class="text-xs text-gray-400 font-normal">/ month</span></div>
+                        <p class="text-gray-300 text-sm mb-6">Unrestricted direct access covering academic coaching, fitness progress tracking, and mindset discipline.</p>
+                        <ul class="space-y-3 text-xs text-gray-300 mb-8">
+                            <li class="flex items-center space-x-2"><i data-lucide="check" class="w-4 h-4 text-goldAccent"></i><span>4 Weekly 1-on-1 Consultation Calls</span></li>
+                            <li class="flex items-center space-x-2"><i data-lucide="check" class="w-4 h-4 text-goldAccent"></i><span>Direct 24/7 WhatsApp Priority Access</span></li>
+                            <li class="flex items-center space-x-2"><i data-lucide="check" class="w-4 h-4 text-goldAccent"></i><span>Custom Science & Diet Architecture</span></li>
                         </ul>
                     </div>
-                    <a href="#booking" class="w-full py-3.5 rounded-xl bg-goldPrimary/10 hover:bg-goldPrimary hover:text-black text-goldPrimary font-bold text-center transition">
-                        Select This Plan
-                    </a>
+                    <a href="#booking" class="w-full py-3.5 bg-cardBorder hover:bg-goldAccent hover:text-black font-bold uppercase tracking-wider text-xs text-white text-center rounded-xl transition block">Book for Rs 20,000</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Booking Form Section (Sends to Email / WhatsApp) -->
-    <section id="booking" class="py-20 px-6 border-t border-borderCol bg-cardBg/50">
-        <div class="max-w-2xl mx-auto glass-panel p-8 md:p-12 rounded-3xl border border-goldPrimary/30 shadow-2xl">
+    <!-- Booking Form Section -->
+    <section id="booking" class="py-20 px-6 bg-brandBlack">
+        <div class="max-w-2xl mx-auto bg-cardDark p-8 md:p-10 rounded-2xl border border-goldAccent/30 shadow-2xl">
             <div class="text-center mb-8">
-                <h2 class="text-3xl font-serif font-bold text-white mb-2">Book Your Strategy Session</h2>
-                <p class="text-gray-400 text-sm">Fill out the form below to send your request directly to Abdul Manan.</p>
+                <h2 class="text-2xl font-bold text-white mb-2 font-cinzel">Reserve Your Session</h2>
+                <p class="text-gray-400 text-sm">Select your mentorship plan below to schedule your direct consultation.</p>
             </div>
 
-            <!-- FORMSPREE FORM: Replace YOUR_FORM_ID with your Formspree Endpoint ID -->
             <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-4">
                 <div>
-                    <label class="block text-sm font-medium text-gray-300 mb-1">Your Full Name</label>
-                    <input type="text" name="name" required class="w-full bg-cardBg border border-borderCol rounded-xl p-3 text-white focus:outline-none focus:border-goldPrimary" placeholder="Enter your name">
+                    <label class="block text-xs font-bold text-gray-300 mb-1.5 uppercase tracking-wider">Your Full Name</label>
+                    <input type="text" name="name" required class="w-full bg-brandBlack border border-cardBorder rounded-xl p-3.5 text-sm text-white focus:outline-none focus:border-goldAccent" placeholder="Abdul Manan">
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold text-gray-300 mb-1.5 uppercase tracking-wider">Email Address</label>
+                        <input type="email" name="email" required class="w-full bg-brandBlack border border-cardBorder rounded-xl p-3.5 text-sm text-white focus:outline-none focus:border-goldAccent" placeholder="name@example.com">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-gray-300 mb-1.5 uppercase tracking-wider">WhatsApp Number</label>
+                        <input type="tel" name="phone" required class="w-full bg-brandBlack border border-cardBorder rounded-xl p-3.5 text-sm text-white focus:outline-none focus:border-goldAccent" placeholder="0311 5840938">
+                    </div>
                 </div>
 
                 <div>
-                    <label class="block text-sm font-medium text-gray-300 mb-1">Email Address</label>
-                    <input type="email" name="email" required class="w-full bg-cardBg border border-borderCol rounded-xl p-3 text-white focus:outline-none focus:border-goldPrimary" placeholder="you@example.com">
-                </div>
-
-                <div>
-                    <label class="block text-sm font-medium text-gray-300 mb-1">WhatsApp / Phone Number</label>
-                    <input type="tel" name="phone" required class="w-full bg-cardBg border border-borderCol rounded-xl p-3 text-white focus:outline-none focus:border-goldPrimary" placeholder="+92 311 5840938">
-                </div>
-
-                <div>
-                    <label class="block text-sm font-medium text-gray-300 mb-1">Select Service Tier</label>
-                    <select name="service" class="w-full bg-cardBg border border-borderCol rounded-xl p-3 text-white focus:outline-none focus:border-goldPrimary">
-                        <option value="1-on-1 Consultation ($50)">1-on-1 Deep Consultation ($50)</option>
-                        <option value="30-Day Mentorship ($250)">30-Day Elite Mentorship ($250)</option>
-                        <option value="Sciences Tutoring ($120)">Sciences Group Tutoring ($120)</option>
-                        <option value="Custom Plan">Custom Transformation Plan</option>
+                    <label class="block text-xs font-bold text-gray-300 mb-1.5 uppercase tracking-wider">Select Mentorship Tier</label>
+                    <select name="service" class="w-full bg-brandBlack border border-cardBorder rounded-xl p-3.5 text-sm text-white focus:outline-none focus:border-goldAccent">
+                        <option value="1-on-1 Strategy Call (Rs 5,000)">1-on-1 Strategy Call — Rs 5,000</option>
+                        <option value="Admissions & CV Blueprint (Rs 12,000)">Admissions & CV Blueprint — Rs 12,000</option>
+                        <option value="30-Day Transformation (Rs 20,000)">30-Day Total Transformation — Rs 20,000</option>
                     </select>
                 </div>
 
                 <div>
-                    <label class="block text-sm font-medium text-gray-300 mb-1">Goals or Questions</label>
-                    <textarea name="message" rows="4" required class="w-full bg-cardBg border border-borderCol rounded-xl p-3 text-white focus:outline-none focus:border-goldPrimary" placeholder="Describe what area you need guidance with..."></textarea>
+                    <label class="block text-xs font-bold text-gray-300 mb-1.5 uppercase tracking-wider">Your Objectives / Questions</label>
+                    <textarea name="message" rows="4" required class="w-full bg-brandBlack border border-cardBorder rounded-xl p-3.5 text-sm text-white focus:outline-none focus:border-goldAccent" placeholder="Outline your current goals or questions for our first call..."></textarea>
                 </div>
 
-                <button type="submit" class="w-full py-3.5 bg-gradient-to-r from-goldPrimary to-goldDark text-black font-bold rounded-xl shadow-lg hover:brightness-110 transition">
-                    Submit Booking Request
+                <button type="submit" class="w-full py-4 bg-gradient-to-r from-goldAccent to-goldMuted hover:from-goldHover hover:to-goldAccent text-black font-extrabold uppercase tracking-widest rounded-xl text-xs transition shadow-lg shadow-goldAccent/20">
+                    Confirm & Submit Booking
                 </button>
             </form>
         </div>
     </section>
 
-    <!-- Direct Contact Section -->
-    <section id="contact" class="py-20 px-6 border-t border-borderCol bg-cardBg">
-        <div class="max-w-5xl mx-auto glass-panel p-10 md:p-14 rounded-3xl border border-goldPrimary/30 text-center relative overflow-hidden">
-            <div class="absolute inset-0 bg-gradient-to-r from-goldPrimary/5 to-transparent pointer-events-none"></div>
-            <h2 class="text-3xl md:text-4xl font-serif font-bold text-white mb-4">Direct Contact</h2>
-            <p class="text-gray-300 max-w-xl mx-auto mb-8 text-sm md:text-base">For urgent session bookings or personal inquiries, connect directly via WhatsApp or Email.</p>
-            
-            <div class="flex flex-wrap justify-center gap-4">
-                <a href="https://wa.me/923115840938" target="_blank" class="px-6 py-3 rounded-xl bg-emerald-600 text-white font-semibold flex items-center space-x-2 hover:bg-emerald-500 transition">
-                    <i data-lucide="message-circle" class="w-5 h-5"></i>
-                    <span>WhatsApp: 0311 5840938</span>
-                </a>
-                <a href="mailto:rockymanan34306@gmail.com" class="px-6 py-3 rounded-xl glass-panel text-white font-semibold flex items-center space-x-2 hover:border-goldPrimary transition">
-                    <i data-lucide="mail" class="w-5 h-5 text-goldPrimary"></i>
-                    <span>rockymanan34306@gmail.com</span>
-                </a>
-                <a href="https://instagram.com/rocky_manaan1" target="_blank" class="px-6 py-3 rounded-xl glass-panel text-white font-semibold flex items-center space-x-2 hover:border-goldPrimary transition">
-                    <i data-lucide="instagram" class="w-5 h-5 text-goldPrimary"></i>
-                    <span>@rocky_manaan1</span>
-                </a>
-            </div>
-        </div>
-    </section>
-
     <!-- Footer -->
-    <footer class="py-10 px-6 border-t border-borderCol text-center text-sm text-gray-500">
-        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+    <footer class="py-8 px-6 border-t border-cardBorder bg-brandBlack text-center text-xs text-gray-500">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
             <p>&copy; 2026 Abdul Manan. All Rights Reserved.</p>
             <div class="flex items-center space-x-6">
-                <a href="https://instagram.com/rocky_manaan1" target="_blank" class="hover:text-goldPrimary transition">Instagram</a>
-                <a href="https://wa.me/923115840938" target="_blank" class="hover:text-goldPrimary transition">WhatsApp</a>
-                <button onclick="openAdminModal()" class="text-goldPrimary hover:underline font-medium">Creator Dashboard</button>
+                <a href="https://wa.me/923115840938" target="_blank" class="hover:text-goldAccent transition">WhatsApp: +92 311 5840938</a>
+                <a href="mailto:rockymanan34306@gmail.com" class="hover:text-goldAccent transition">rockymanan34306@gmail.com</a>
             </div>
         </div>
     </footer>
 
-    <!-- Creator Admin Authentication Modal -->
-    <div id="admin-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden items-center justify-center p-4">
-        <div class="glass-panel w-full max-w-md rounded-3xl p-8 border border-goldPrimary/40 relative">
-            <button onclick="closeAdminModal()" class="absolute top-6 right-6 text-gray-400 hover:text-white"><i data-lucide="x" class="w-6 h-6"></i></button>
-            
-            <div id="login-view">
-                <div class="w-12 h-12 rounded-xl bg-goldPrimary/10 text-goldPrimary flex items-center justify-center mb-6"><i data-lucide="shield-check" class="w-6 h-6"></i></div>
-                <h3 class="text-2xl font-serif font-bold text-white mb-2">Creator Portal Access</h3>
-                <p class="text-gray-400 text-sm mb-6">Enter your Master Admin PIN to unlock management controls.</p>
-                <input type="password" id="admin-pin" placeholder="Enter Admin PIN" class="w-full bg-cardBg border border-borderCol rounded-xl px-4 py-3 text-white mb-4 focus:outline-none focus:border-goldPrimary">
-                <button onclick="verifyAdmin()" class="w-full py-3.5 bg-gradient-to-r from-goldPrimary to-goldDark text-black font-bold rounded-xl shadow-lg hover:brightness-110 transition">Unlock Dashboard</button>
-            </div>
-
-            <div id="dashboard-view" class="hidden">
-                <div class="flex items-center justify-between mb-6">
-                    <h3 class="text-xl font-bold text-white">Creator Control Panel</h3>
-                    <span class="text-xs bg-emerald-500/20 text-emerald-400 px-3 py-1 rounded-full font-semibold">Active Creator</span>
-                </div>
-                <p class="text-gray-300 text-sm mb-6">Welcome, Abdul Manan. Your platform is live and visitors are able to submit bookings or chat directly via WhatsApp (`+923115840938`).</p>
-                <div class="space-y-4">
-                    <div class="bg-cardBg p-4 rounded-xl border border-borderCol">
-                        <div class="text-xs text-gray-400 mb-1">Configured Email</div>
-                        <div class="text-white font-medium text-sm">rockymanan34306@gmail.com</div>
-                    </div>
-                    <div class="bg-cardBg p-4 rounded-xl border border-borderCol">
-                        <div class="text-xs text-gray-400 mb-1">Active Instagram</div>
-                        <div class="text-white font-medium text-sm">@rocky_manaan1</div>
-                    </div>
-                    <div class="bg-cardBg p-4 rounded-xl border border-borderCol">
-                        <div class="text-xs text-gray-400 mb-1">WhatsApp Direct Line</div>
-                        <div class="text-white font-medium text-sm">+92 311 5840938</div>
-                    </div>
-                </div>
-                <button onclick="closeAdminModal()" class="w-full mt-6 py-3 bg-borderCol text-white font-semibold rounded-xl hover:bg-gray-800 transition">Close Dashboard</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Scripts -->
+    <!-- Tab Switching Script -->
     <script>
         lucide.createIcons();
 
-        function openAdminModal() {
-            document.getElementById('admin-modal').classList.remove('hidden');
-            document.getElementById('admin-modal').classList.add('flex');
-        }
+        function switchTab(tabKey) {
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(el => el.classList.add('hidden'));
 
-        function closeAdminModal() {
-            document.getElementById('admin-modal').classList.add('hidden');
-            document.getElementById('admin-modal').classList.remove('flex');
-        }
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
 
-        function verifyAdmin() {
-            const pin = document.getElementById('admin-pin').value;
-            if (pin === 'manan34306') {
-                document.getElementById('login-view').classList.add('hidden');
-                document.getElementById('dashboard-view').classList.remove('hidden');
-            } else {
-                alert('Invalid Admin PIN.');
-            }
+            document.getElementById('content-' + tabKey).classList.remove('hidden');
+            document.getElementById('tab-' + tabKey).classList.add('active');
         }
     </script>
 </body>
